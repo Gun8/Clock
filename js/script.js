@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     let date = new Date();
 
-    let watch = {
+    let clock = {
         hours: date.getHours(),
         minutes: date.getMinutes(),
         seconds: date.getSeconds()
@@ -12,31 +12,31 @@ window.addEventListener('DOMContentLoaded', () => {
         seconds = document.querySelector('.seconds'),
         type = document.querySelector('.pm-am');
 
-    if (watch.hours >= 12) {
+    if (clock.hours >= 12) {
         type.textContent = 'PM';
-        watch.hours -= 12;
+        clock.hours -= 12;
     }
 
     function setTime() {
 
-        if (watch.seconds == 60) {
-            watch.seconds = 0;
-            watch.minutes += 1;
+        if (clock.seconds == 60) {
+            clock.seconds = 0;
+            clock.minutes += 1;
         }
 
-        if (watch.minutes == 60) {
-            watch.minutes = 0;
-            watch.hours += 1;
+        if (clock.minutes == 60) {
+            clock.minutes = 0;
+            clock.hours += 1;
         }
 
-        if (watch.hours == 12) {
-            watch.hours = 0;
+        if (clock.hours == 12) {
+            clock.hours = 0;
             type.textContent = 'AM' ? 'PM' : 'AM';
         }
 
-        let h = watch.hours,
-            m = watch.minutes,
-            s = watch.seconds;
+        let h = clock.hours,
+            m = clock.minutes,
+            s = clock.seconds;
 
         if (h < 10)
             h = '0' + h;
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
         hours.textContent = h;
         minutes.textContent = m;
         seconds.textContent = s;
-        watch.seconds += 1;
+        clock.seconds += 1;
     }
 
     setTime();
