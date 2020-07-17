@@ -1,0 +1,29 @@
+body{
+    background-color: #000;
+}
+
+.watch{
+    color: #30acbf;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 250px;
+    font-family: 'digital-7';
+    min-width: 300px;
+}
+
+.watch span:nth-child(1),
+.watch span:nth-child(6)
+{
+    margin: 0;
+}
+
+.watch span{
+    margin-left: -25px;
+}
+
+.watch span:nth-child(1),
+.watch span:nth-child(3),
+.watch span:nth-child(5){
+    display: inline-block;
+    min-width: 100px;
+}
